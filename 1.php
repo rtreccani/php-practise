@@ -19,24 +19,28 @@ function getSumOfMembers($validMembers, $upperBound){
 }
 
 //more performant version using the arithmetic sum of each of the 'validmembers'
-function getSumOfMembersNumerical($validMembers, $upperBound){
-    $sum = 0; 
-    //iterate every member in the validmembers array.
-    for($memberIndex=0; $memberIndex < sizeof($validMembers); $memberIndex++){ 
-        //get the current member of the validmembers array for convenience.
-        $currentMember = $validMembers[$memberIndex]; 
-        //the upperbound has to be 
-        //A. less than $upperBound, not equal, and 
-        //B. a round multiple of $currentMember
-        $newUpper = $currentMember * floor(($upperBound-1)/$currentMember);
-        //arithmetic sum is nelements * (lower element + upper element)/2
-        $sum += ($newUpper/$currentMember) * (($currentMember+$newUpper)/2);
-    }
-    return($sum);
-}
+//this doesnt' work since multiples of 3 and 5 (15) will be counted twice. need
+//to subtract every permutation of the $validMembers array which sounds like a pain
+// function getSumOfMembersNumerical($validMembers, $upperBound){
+//     $sum = 0; 
+//     //iterate every member in the validmembers array.
+//     for($memberIndex=0; $memberIndex < sizeof($validMembers); $memberIndex++){ 
+//         //get the current member of the validmembers array for convenience.
+//         $currentMember = $validMembers[$memberIndex]; 
+//         //the upperbound has to be 
+//         //A. less than $upperBound, not equal, and 
+//         //B. a round multiple of $currentMember
+//         $newUpper = $currentMember * floor(($upperBound-1)/$currentMember);
+//         //arithmetic sum is nelements * (lower element + upper element)/2
+//         $sum += ($newUpper/$currentMember) * (($currentMember+$newUpper)/2);
+//     }
+//     return($sum);
+// }
 
 //naive analytical method
-echo(getSumOfMembers([3,5], 10));
+// echo(getSumOfMembers([3,5], 10));
 
 //performant numerical method
-echo(getSumOfMembersNumerical([3,5], 10));
+// echo(getSumOfMembersNumerical([3,5], 10));
+
+echo(getSumOfMembers([3,5], 1000));
