@@ -34,5 +34,5 @@ function getSumOfEvenFibonacci($upperBound){
 
 //get the answer
 echo (getSumOfEvenFibonacci(4*1000*1000));
-
+//4613732
 ?>

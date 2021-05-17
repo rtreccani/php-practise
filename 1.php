@@ -20,3 +20,4 @@ function getSumOfMembers($validMembers, $upperBound){
 
 //get the answer
 echo(getSumOfMembers([3,5], 1000));
+//233168
