@@ -24,6 +24,9 @@
 
 // Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
+//scan through $digits creating $len substrings, then store both the max value and its offset
+//for every substring, iterate across it multiplying each digit, if the maximum is over the current max, 
+//store your new maximums. return the maximum and maximum offset
 function findAdjacentNDigitsBiggestProduct($digits, $len){
     $currentMaximumOffset = 0;
     $currentMaximum = 0;
